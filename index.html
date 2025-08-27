@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta name="description" content="TEDxNITK is the TEDx Chapter of NITK.">
+    <meta name="theme-color" content="#eb0028">
+
+    <title>TEDx NITK</title>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="font.awesome.min.css">
+    <link rel="stylesheet" href="Material-Design-Iconic-Font.min.css">
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="stylesheet" href="animate.css">
+    <link rel="stylesheet" href="owl.carousel.min.css.css">
+    <link rel="stylesheet" href="magnific-popup.css">
+    <link rel="stylesheet" href="classynav.css">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    
+    <style>
+        /* ===================================
+        CUSTOM CSS OVERRIDES AND NEW SECTIONS
+        =================================== */
+
+        /* --- 1. Global Styles --- */
+        body {
+            background-color: #000;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* --- 2. Vanta.js Background Layer --- */
+        #vanta-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Sent to the very back */
+        }
+
+        /* --- 3. Header / Navbar Styling --- */
+        .header-area {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: transparent !important;
+            border-bottom: none !important;
+            transition: background-color 0.4s ease;
+        }
+        .header-area.scrolled {
+            background-color: rgba(0, 0, 0, 0.8) !important;
+            backdrop-filter: blur(10px);
+        }
+        nav.classy-navbar {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100%;
+        }
+        .classynav ul#nav {
+            display: flex !important;
+            flex-direction: row !important;
+            gap: 40px;
+        }
+        .classynav ul#nav > li > a {
+            color: rgb(0, 0, 0) !important;
+            font-weight: 600;
+             background: transparent !important;
+
+        }
+        .classynav ul#nav > li > a:hover {
+            color: #eb0028 !important;
+        }
+
+        /* --- 4. Hero Section Styling --- */
+        .welcome-area {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+        .welcome-area .single-welcome-slide {
+            background: none !important;
+        }
+        .welcome-text-two h5 {
+            font-size: 24px;
+            font-weight: 500;
+            color: white !important;
+            letter-spacing: 1px;
+        }
+        .welcome-text-two h2 {
+            font-size: 12vw;
+            font-weight: 800;
+            color: white !important;
+            text-transform: uppercase;
+            line-height: 1;
+            margin: 20px 0;
+        }
+        .welcome-text-two .event-meta a {
+            color: #d3d3d3 !important;
+            font-size: 18px;
+        }
+        .btn.confer-btn {
+            background-color: #eb0028 !important;
+            border: none;
+            color: white !important;
+            border-radius: 5px;
+            padding: 12px 30px;
+            font-weight: bold;
+        }
+        .btn.confer-btn:hover {
+            background-color: #ffffff !important;
+            color: #eb0028 !important;
+        }
+        .background-image {
+            display: none;
+        }
+
+        /* --- 5. NEWLY ADDED: THE EXPERIENCE SECTION --- */
+        .experience-section {
+            background-color: #1a1a1a;
+            color: #ffffff;
+            padding: 100px 0;
+            position: relative;
+            z-index: 5; /* Ensure it appears above the fixed background */
+        }
+        .experience-section .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .experience-section .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .experience-section .section-title h2 {
+            font-size: 36px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #fff;
+            margin: 0;
+            padding-bottom: 5px;
+            border-bottom: 4px solid #eb0028;
+        }
+        .experience-section .section-title .clover-icon {
+            font-size: 24px;
+            margin-left: 15px;
+        }
+        .experience-section .intro-paragraph {
+            color: #b0b0b0;
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 60px;
+        }
+        .experience-section .experience-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        .experience-section .feature-item {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        .experience-section .feature-icon {
+            color: #eb0028;
+            margin-bottom: 20px;
+        }
+        .experience-section .feature-item h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        .experience-section .feature-item p {
+            color: #b0b0b0;
+            font-size: 15px;
+            line-height: 1.6;
+            margin: 0;
+        }
+        @media (max-width: 992px) {
+            .experience-section .feature-item { flex-basis: 45%; }
+        }
+        @media (max-width: 576px) {
+            .experience-section .feature-item { flex-basis: 100%; text-align: center; }
+        }
+        
+        /* --- About TED & TEDx Section Styling --- */
+        .about-ted-section {
+            position: relative;
+            z-index: 5;
+            background-color: #000033; /* Dark blue background */
+            color: white;
+            padding: 100px 0;
+            margin-top: 50px;
+        }
+
+        .about-ted-section .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 50px;
+            color: white;
+        }
+
+        .about-ted-section .text-red {
+            color: #eb0028;
+        }
+
+        .about-ted-section h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .about-ted-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .about-ted-section .ted-info,
+        .about-ted-section .tedx-info {
+            padding: 20px;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .about-ted-section {
+                padding: 60px 0;
+            }
+            .about-ted-section .section-title {
+                font-size: 2rem;
+            }
+            .about-ted-section h3 {
+                font-size: 1.5rem;
+                margin-top: 20px;
+            }
+            .about-ted-section p {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* --- Location Section Styling --- */
+        .location-section {
+            position: relative;
+            z-index: 5;
+            background-color: #000;
+            padding: 100px 0;
+            color: white;
+        }
+
+        .location-section .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .location-section .text-red {
+            color: #eb0028;
+        }
+
+        .location-section p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .location-section .map-container {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .location-section {
+                padding: 60px 0;
+            }
+            .location-section .section-title h2 {
+                font-size: 2rem;
+            }
+            .location-section p {
+                font-size: 1rem;
+            }
+        }
+
+        /* --- Footer Styling --- */
+        .site-footer {
+            background-color: #000;
+            color: white;
+            padding: 80px 0 20px;
+            position: relative;
+            z-index: 5;
+        }
+
+        .footer-content {
+            margin-bottom: 50px;
+        }
+
+        /* Footer Brand Section */
+        .footer-brand {
+            margin-bottom: 30px;
+        }
+
+        .footer-logo {
+            width: 150px;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+            margin: 10px 0;
+        }
+
+        .independent-text {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Gallery Section */
+        .footer-gallery h4,
+        .footer-social h4 {
+            color: #eb0028;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Social Media Section */
+        .footer-social {
+            text-align: left;
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 10px 20px;
+            background-color: rgba(235, 0, 40, 0.1);
+            border: 1px solid rgba(235, 0, 40, 0.3);
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link i.custom-icon {
+            width: 35px;
+            height: 35px;
+            background-color: #eb0028;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .social-link i.custom-icon::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .social-link.instagram i.custom-icon::before {
+            background-image: url('insta logo (2).png');
+        }
+
+        .social-link.linkedin i.custom-icon::before {
+            background-image: url('linkedinlogo.png');
+        }
+        
+        .social-link i.custom-icon::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+        
+        .social-link.instagram i.custom-icon::before {
+            content: '';
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg>');
+        }
+        
+        .social-link.linkedin i.custom-icon::before {
+            content: '';
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="white"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg>');
+        }
+
+        .social-link-text {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .social-link:hover {
+            background-color: rgba(235, 0, 40, 0.2);
+            transform: translateX(5px);
+        }
+
+        .social-link:hover i {
+            transform: scale(1.1);
+            background-color: #ff1f1f;
+        }
+
+        .social-link.instagram i {
+            background: #eb0028;
+        }
+
+        .social-link.linkedin i {
+            background: #eb0028;
+        }
+
+        .mission-text {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        .copyright a {
+            color: #eb0028;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .copyright a:hover {
+            color: #ff1f1f;
+        }
+
+        .back-to-top {
+            color: #eb0028;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            color: #ff1f1f;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .footer-social {
+                text-align: center;
+            }
+            .social-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .site-footer {
+                padding: 50px 0 20px;
+            }
+            .footer-brand, .footer-gallery {
+                text-align: center;
+                margin-bottom: 40px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-bottom {
+                text-align: center;
+                justify-content: center;
+            }
+            .copyright, .back-to-top {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-item img {
+                height: 80px;
+            }
+        }
+
+        /* --- General Cleanup for other sections --- */
+        .about-us-countdown-area, .our-speaker-area {
+            position: relative;
+            z-index: 5;
+            background-color: #111;
+            color: white;
+        }
+        /* ============================
+   SPEAKER SLIDER SECTION STYLES
+   ============================ */
+.speaker-slider-section {
+    position: relative;
+    width: 100%;
+    height: 80vh; /* Adjust height as needed */
+    background-color: #000;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+.swiper.speaker-swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.speaker-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.8s ease-in-out;
+    filter: brightness(0.9);
+}
+
+.swiper-slide-active .speaker-background-image {
+    transform: scale(1.05); /* Subtle zoom effect on the active slide */
+}
+
+.speaker-nameplate {
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #eb0000;
+    padding: 20px 30px;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 50%;
+    border: 2px solid rgba(161, 26, 26, 0.6);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    bottom: 28%; /* Position above the text in the image */
+    left: 50%;
+    transform: translateX(-50%);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.speaker-nameplate h2 {
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-weight: 800;
+    margin: 0 0 5px 0;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.speaker-nameplate p {
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    font-weight: 500;
+    margin: 0;
+    opacity: 0.9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .speaker-nameplate {
+        padding: 12px 20px;
+        max-width: 95%;
+        bottom: 25%; /* Adjust position for tablets */
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+        font-size: 16px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .speaker-nameplate {
+        padding: 10px 15px;
+        bottom: 22%; /* Adjust position for mobile */
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 35px !important;
+        height: 35px !important;
+        transform: translateY(-50%);
+    }
+}
+
+/* --- Custom Navigation Arrow Styling --- */
+.swiper-button-next,
+.swiper-button-prev {
+    color: rgba(255, 255, 255, 0.9) !important;
+    background-color: transparent;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    background-color: rgba(235, 0, 40, 0.4);
+    border-color: rgba(235, 0, 40, 0.6);
+    transform: scale(1.1);
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-size: 18px !important;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <div id="vanta-background"></div>
+
+    <div id="root">
+        <div class="App">
+
+            <header class="header-area">
+                <div class="classy-nav-container breakpoint-off">
+                    <div class="container">
+                        <nav class="classy-navbar justify-content-between interTypeface" id="conferNav">
+                            <a class="nabarlogo" href="/"><img src="TEDX NITK LOGO.jpg" width="100px" alt="TEDx NITK Logo"></a>
+                            <div class="classy-navbar-toggler"><span class="navbarToggler"><span></span><span></span><span></span></span></div>
+                            <div class="classy-menu">
+                                <div class="classycloseIcon">
+                                    <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
+                                </div>
+                                <div class="classynav">
+                                    <ul id="nav">
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/about TEDx">about TEDx</a></li>
+                                        <li><a href="/2024">Last Edition</a></li>
+                                        <li><a href="/team">Team</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <main>
+                <section class="welcome-area">
+                    <div class="container h-100">
+                        <div class="row h-100 align-items-center">
+                            <div class="col-12">
+                                <div class="welcome-text-two text-center">
+                                    <h5 data-animation="fadeInUp" data-delay="100ms">TEDx NITK 2025</h5>
+                                    <h2 style="color: #ff1f1f" data-animation="fadeInUp" data-delay="300ms">Alchemy</h2>
+                                    <div class="event-meta" data-animation="fadeInUp" data-delay="500ms">
+                                        <a class="event-date" href="/#">Thank you for making 2025 edition a success!<br>See you in 2026!</a>
+                                    </div>
+                                    <div class="hero-btn-group" data-animation="fadeInUp" data-delay="700ms">
+                                        <a class="btn confer-btn m-2" href="/about">Learn more! <i class="zmdi zmdi-long-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="icon-scroll" id="scrollDown"></div>
+                </section>
+
+  <section class="theme-intro-section" id="about">
+                    <div class="theme-video-container">
+                        <video src="video.mp4" autoplay muted loop playsinline>
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="theme-text-container">
+                        <h3 style="color: #ffffff">Alchemy<span>.</span></h3>
+                        <p>
+                            At TEDxNITK, we delve into the essence of 'Alchemy'—not as a forgotten myth, but as a living practice. It is the process that refines a base idea into a golden innovation, a personal trial into a testament of resilience. Witness the science and soul of creation.
+                        </p>
+                        <a href="/about" class="btn-white">Learn more →</a>
+                    </div>
+                </section>
+<style>
+                 /* --- NEWLY ADDED: THEME INTRO SECTION --- */
+        .theme-intro-section {
+            display: flex;
+            align-items: center;
+            background-color: #111;
+            padding: 120px 5%;
+            gap: 60px;
+            position: relative;
+            z-index: 5;
+            flex-wrap: wrap;
+        }
+        .theme-video-container {
+            flex: 1;
+            min-width: 300px;
+        }
+        .theme-video-container video {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            display: block;
+        }
+        .theme-text-container {
+            flex: 1;
+            min-width: 300px;
+        }
+        .theme-text-container h3 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 20px 0;
+        }
+        .theme-text-container h3 span {
+            color: #eb0028;
+        }
+        .theme-text-container p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #b0b0b0;
+            margin-bottom: 30px;
+        }
+        .theme-text-container .btn-white {
+            display: inline-block;
+            color: #fff !important;
+            border: 2px solid #fff;
+            padding: 12px 25px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .theme-text-container .btn-white:hover {
+            background-color: #fff;
+            color: #000 !important;
+        }
+        @media (max-width: 768px) {
+            .theme-intro-section {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        </style>
+
+                <section class="speaker-slider-section">
+    <div class="swiper speaker-swiper">
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="speaker-background-image" style="background-image: url('speaker 1.png');"></div>
+                <div class="speaker-nameplate">
+                    <h2>Speaker One</h2>
+                    <p>Innovation Leader</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="speaker-background-image" style="background-image: url('speaker 2.png');"></div>
+                <div class="speaker-nameplate">
+                    <h2>Speaker Two</h2>
+                    <p>Technology Pioneer</p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="speaker-background-image" style="background-image: url('speaker 3.png');"></div>
+                <div class="speaker-nameplate">
+                    <h2>Speaker Three</h2>
+                    <p>Thought Leader</p>
+                </div>
+            </div>
+
+            </div>
+        
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+</section>
+
+                <section class="about-ted-section">
+                    <div class="container">
+                        <h2 class="section-title">about <span class="text-red">TED & TEDx</span></h2>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="ted-info">
+                                    <h3><span class="text-red">TED</span></h3>
+                                    <p>began in 1984 as a conference where Technology, Entertainment and Design converged, but today it spans a multitude of worldwide communities and initiatives exploring everything from science and business to education, arts and global issues. TEDx is a grassroots initiative, created in the spirit of TED's overall mission to research and discover "ideas worth spreading." TEDx brings the spirit of TED to local communities around the globe through TEDx events.</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tedx-info">
+                                    <h3><span class="text-red">TEDx</span></h3>
+                                    <p>events are organized by passionate individuals who seek to uncover new ideas and to share the latest research in their local areas that spark conversations in their communities. These events include live speakers and recorded TED Talks, and are organized independently under a free license granted by TED. These events are not controlled by TED, but event organizers agree to abide by our format, and are offered guidelines for curation, speaker coaching, event organizing and more. They learn from us and from each other. More than 3000 events are now held annually.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="location-section">
+                    <div class="container">
+                        <div class="section-title text-center mb-5">
+                            <h2>Our <span class="text-red">Location</span></h2>
+                            <p class="mt-3">National Institute of Technology Karnataka, Surathkal</p>
+                        </div>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3887.815282770671!2d74.79220577515633!3d12.988544714507615!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba35211b768ac8f%3A0x6b1144ac2d5dadf3!2sNational%20Institute%20of%20Technology%20Karnataka%2C%20Surathkal!5e0!3m2!1sen!2sin!4v1693139433297!5m2!1sen!2sin" 
+                                width="100%" 
+                                height="450" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="experience-section">
+                    <div class="container">
+                        <div class="section-title">
+                            <h2>THE EXPERIENCE</h2>
+                            <span class="clover-icon">🍀</span>
+                        </div>
+                        <p class="intro-paragraph">
+                            Fostered by the vision of serving the student community with the most innovative and inspiring ideas, TEDxNITKSurathkal is a university TEDx event that began at NITK in 2011. Having had many successful editions in 2011, 2012, 2016, 2018, 2019, 2020, 2021, 2022 and 2023, TEDxNITKSurathkal is striving for its upcoming annual colloque to explore beyond the conventions and allow people to rethink their notion of what is possible.
+                        </p>
+                        <div class="experience-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill="currentColor" width="48" height="48"><path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-21.9-16.1-39.4-36.2-43.8C8.8 167.8 0 182.2 0 198.5c0 17 6.1 31.9 16 43.1V352c0 22.1 17.9 40 40 40s40-17.9 40-40V259.1c-5.2-3.5-9.4-7.9-12.3-12.9l-.1-.1c-1.1-1.6-2.1-3.3-3-5.1zM320 216c0-21.9-16.1-39.4-36.2-43.8-19-4.2-36.2 10.2-36.2 26.5 0 17 6.1 31.9 16 43.1V352c0 22.1 17.9 40 40 40s40-17.9 40-40V259.1c-5.2-3.5-9.4-7.9-12.3-12.9l-.1-.1c-1.1-1.6-2.1-3.3-3-5.1z"/></svg></div>
+                                <h3>Impactful Ideas</h3>
+                                <p>We strive to bring forward powerful ideas that challenge the norms and carry the potential to transform lives.</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" fill="currentColor" width="48" height="48"><path d="M144 0a80 80 0 1 1 0 160A80 80 0 1 1 144 0zM512 0a80 80 0 1 1 0 160A80 80 0 1 1 512 0zM0 298.7C0 239.8 47.8 192 106.7 192h42.7c15.9 0 31 3.5 44.6 9.7c-1.3 7.2-1.9 14.7-1.9 22.3c0 38.2 16.8 72.5 43.3 96c-.2 0-.4 0-.7 0H21.3C9.6 320 0 310.4 0 298.7zM405.3 320c-.2 0-.4 0-.7 0c26.6-23.5 43.3-57.8 43.3-96c0-7.6-.7-15-1.9-22.3c13.6-6.3 28.7-9.7 44.6-9.7h42.7C592.2 192 640 239.8 640 298.7c0 11.8-9.6 21.3-21.3 21.3H405.3zM320 256a144 144 0 1 1 0 288 144 144 0 1 1 0-288z"/></svg></div>
+                                <h3>Community Strength</h3>
+                                <p>Standing 6000+ strong, our community comprises of curious individuals with an ever increasing appetite for learning.</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" width="48" height="48"><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6s-25.7-2.2-34.9 6.9L384 56.4V128H256c-17.7 0-32 14.3-32 32v32h110.3c23.2 0 45 6.7 64 18.5c24.2 14.9 42.7 37.4 53.4 63.9c12.3 30.6 14.9 65.4 6.8 98.2l-13.2 52.9c-3.4 13.5-15.6 23.1-29.6 23.1H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h96v-32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h96V160H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h96V32c0-17.7 14.3-32 32-32h96c17.7 0 32 14.3 32 32v32h96V32z"/></svg></div>
+                                <h3>Legacy</h3>
+                                <p>Ranking amongst the top educational institutes in India, our university adds a key ingredient in realising our vision.</p>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" fill="currentColor" width="48" height="48"><path d="M565.6 36.2C572.1 40.7 576 48.1 576 56V392c0 10-6.2 18.9-15.5 22.4l-160 64C394.4 481.6 384 480.1 384 469.3V202.7L226.7 262.2c-1.3 .5-2.5 1.2-3.7 1.9v197.2c0 10-6.2 18.9-15.5 22.4l-160 64C39.4 551.6 32 550.1 32 539.3V182.7L10.4 191.8C4 194.3 0 189.9 0 183.2V88c0-9.8 7.5-18.1 17.1-19.5L160 46.7V56c0-7.9 3.9-15.3 10.4-19.8l160-112C336.9-1.6 344.2-2.1 351.2 2.2L528 106.7V32c0-12.9 7.8-24.6 19.8-29.6s25.7-2.2 34.9 6.9l-17.1-13.1zM352 233.3V447.8L496 393.1V78.7L352 178.7v54.6zM32 213.3V447.8L176 393.1V78.7L32 133.3v80z"/></svg></div>
+                                <h3>Location</h3>
+                                <p>Hugging the Arabian sea along its length, our venue is a welcoming retreat for sparking up conversations about things that matter.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="about-us-countdown-area section-padding-100-0 welcomeBG" id="about">
+                    </section>
+
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="row">
+                                <!-- TEDx Logo and Title -->
+                                <div class="col-lg-4 col-md-6 footer-brand">
+                                    <div class="tedx-logo">
+                                        <img src="TEDX NITK LOGO.jpg" alt="TEDx NITK Logo" class="footer-logo">
+                                        <h3>NITKSurathkal</h3>
+                                        <p class="independent-text">× = independently organized TED event</p>
+                                    </div>
+                                </div>
+
+                                <!-- Gallery Section -->
+                                <div class="col-lg-4 col-md-6 footer-gallery">
+                                    <h4>GALLERY</h4>
+                                    <div class="gallery-grid">
+                                        <div class="gallery-item">
+                                            <img src="photo1.png" alt="Event Photo 1">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="photo2.png" alt="Event Photo 2">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="photo3.png" alt="Event Photo 3">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="photo4.png" alt="Event Photo 4">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="photo5.png" alt="Event Photo 5">
+                                        </div>
+                                        <div class="gallery-item">
+                                            <img src="photo6.png" alt="Event Photo 6">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Social Media Section -->
+                                <div class="col-lg-4 col-md-12 footer-social">
+                                    <h4>SPREAD THE LOVE</h4>
+                                    <p>We're on your favourite social media networks! Follow us on:</p>
+                                    <div class="social-links">
+                                        <a href="https://www.instagram.com/tedxnitksurathkal/" target="_blank" class="social-link instagram" title="Instagram">
+                                            <i class="custom-icon"></i>
+                                            <span class="social-link-text">@tedxnitksurathkal</span>
+                                        </a>
+                                        <a href="https://www.linkedin.com/company/tedxnitk/?originalSubdomain=in" target="_blank" class="social-link linkedin" title="LinkedIn">
+                                            <i class="custom-icon"></i>
+                                            <span class="social-link-text">TEDxNITKSurathkal</span>
+                                        </a>
+                                    </div>
+                                    <p class="mission-text">
+                                        Fostered by the vision of serving the student community with the most innovative and inspiring ideas.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+
+                        <!-- Footer Bottom -->
+                        <div class="footer-bottom">
+                            <div class="copyright">
+                                <p>Copyright © 2025 All Rights Reserved | Made With ❤️ By TEDxNITKSurathkal & 
+                                    <a href="https://colorlib.com" target="_blank" class="colorlib-link">Colorlib</a>
+                                </p>
+                                <p>This Independent TEDx Event Is Operated Under License From 
+                                    <a href="https://www.ted.com" target="_blank" class="ted-link">TED</a>.
+                                </p>
+                            </div>
+                            <a href="#" class="back-to-top">
+                                Back To Top ↑
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+                
+            </main>
+
+            </div>
+    </div>
+
+    <script src="jquesry.min.js"></script>
+    <script src="proper.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="confer.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-71BFNS64QK"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-71BFNS64QK');
+    </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.dots.min.js"></script>
+    <script>
+        // Add scrolled class to navbar when scrolling
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('.classy-nav-container');
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+                nav.style.backdropFilter = 'blur(10px)';
+                nav.style.borderBottom = '1px solid rgba(255, 255, 255, 0.1)';
+            } else {
+                nav.style.backgroundColor = 'transparent';
+                nav.style.backdropFilter = 'none';
+                nav.style.borderBottom = 'none';
+            }
+        });
+    </script>
+    <script>
+        VANTA.DOTS({
+            el: "#vanta-background",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xff0000,
+            color2: 0xe52b1a,
+            backgroundColor: 0x0, // Correct solid black
+            size: 3.00,
+            spacing: 35.00
+        });
+
+        // Initialize Swiper
+        const swiper = new Swiper('.speaker-swiper', {
+            // Enable smooth sliding effect
+            effect: 'slide',
+            
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+            speed: 800,
+            
+            // Auto play settings
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            
+            // Responsive breakpoints
+            breakpoints: {
+                // when window width is >= 320px
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20
+                },
+                // when window width is >= 480px
+                480: {
+                    slidesPerView: 1,
+                    spaceBetween: 30
+                }
+            },
+            
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            
+            // Add smooth transition effect
+            on: {
+                init: function () {
+                    document.querySelectorAll('.speaker-background-image').forEach(image => {
+                        image.style.transition = 'transform 0.8s ease-in-out';
+                    });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
